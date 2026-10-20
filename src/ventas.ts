@@ -31,3 +31,7 @@ export const totalPorCategoria = ventasPagadas.reduce(
   }),
   {} as Record<string, number>
 );
+
+export const ventaMayorImporte = ventas.reduce((mayor, venta) =>
+  venta.importe > mayor.importe ? venta : mayor
+);
