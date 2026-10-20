@@ -21,3 +21,5 @@ export const importesPagados = ventasPagadas.map(venta => venta.importe);
 export const productosTecnologicosPagados = ventas
   .filter(venta => venta.categoria === "tecnologia" && venta.pagada)
   .map(venta => venta.producto);
+
+export const totalRecaudado = importesPagados.reduce((acumulado, importe) => acumulado + importe, 0);
