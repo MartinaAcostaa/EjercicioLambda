@@ -13,3 +13,11 @@ const ventas: Venta[] = [
   { producto: "Monitor", categoria: "tecnologia", importe: 150000, pagada: true },
   { producto: "Auriculares", categoria: "tecnologia", importe: 28000, pagada: false }
 ];
+
+const ventasPagadas = ventas.filter(venta => venta.pagada);
+
+const importesPagados = ventasPagadas.map(venta => venta.importe);
+
+const productosTecnologicosPagados = ventas
+  .filter(venta => venta.categoria === "tecnologia" && venta.pagada)
+  .map(venta => venta.producto);
