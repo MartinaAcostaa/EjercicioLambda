@@ -43,14 +43,3 @@ export const cantidadPendientes = ventas.filter(
 export const importePendiente = ventas
   .filter(venta => !venta.pagada)
   .reduce((acumulado, venta) => acumulado + venta.importe, 0);
-
-
-
-console.log("Ventas pagadas:", ventasPagadas);
-console.log("Importes pagados:", importesPagados);
-console.log("Productos tecnológicos pagados:", productosTecnologicosPagados);
-console.log("Total recaudado:", totalRecaudado);
-console.log("Total por categoría:", totalPorCategoria);
-console.log("Venta de mayor importe:", ventaMayorImporte);
-console.log("Cantidad de ventas pendientes:", cantidadPendientes);
-console.log("Importe pendiente de cobro:", importePendiente);
