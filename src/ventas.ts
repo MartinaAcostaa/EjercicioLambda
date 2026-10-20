@@ -1,11 +1,11 @@
-type Venta = {
+export type Venta = {
   producto: string;
   categoria: "libros" | "tecnologia";
   importe: number;
   pagada: boolean;
 };
 
-const ventas: Venta[] = [
+export const ventas: Venta[] = [
   { producto: "Libro TypeScript", categoria: "libros", importe: 25000, pagada: true },
   { producto: "Mouse", categoria: "tecnologia", importe: 18000, pagada: true },
   { producto: "Teclado", categoria: "tecnologia", importe: 45000, pagada: false },
@@ -14,10 +14,10 @@ const ventas: Venta[] = [
   { producto: "Auriculares", categoria: "tecnologia", importe: 28000, pagada: false }
 ];
 
-const ventasPagadas = ventas.filter(venta => venta.pagada);
+export const ventasPagadas = ventas.filter(venta => venta.pagada);
 
-const importesPagados = ventasPagadas.map(venta => venta.importe);
+export const importesPagados = ventasPagadas.map(venta => venta.importe);
 
-const productosTecnologicosPagados = ventas
+export const productosTecnologicosPagados = ventas
   .filter(venta => venta.categoria === "tecnologia" && venta.pagada)
   .map(venta => venta.producto);
