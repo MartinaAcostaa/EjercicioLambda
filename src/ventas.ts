@@ -35,3 +35,11 @@ export const totalPorCategoria = ventasPagadas.reduce(
 export const ventaMayorImporte = ventas.reduce((mayor, venta) =>
   venta.importe > mayor.importe ? venta : mayor
 );
+
+export const cantidadPendientes = ventas.filter(
+  venta => !venta.pagada
+).length;
+
+export const importePendiente = ventas
+  .filter(venta => !venta.pagada)
+  .reduce((acumulado, venta) => acumulado + venta.importe, 0);
