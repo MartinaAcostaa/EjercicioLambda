@@ -23,3 +23,11 @@ export const productosTecnologicosPagados = ventas
   .map(venta => venta.producto);
 
 export const totalRecaudado = importesPagados.reduce((acumulado, importe) => acumulado + importe, 0);
+
+export const totalPorCategoria = ventasPagadas.reduce(
+  (acumulado, venta) => ({
+    ...acumulado,
+    [venta.categoria]: (acumulado[venta.categoria] ?? 0) + venta.importe,
+  }),
+  {} as Record<string, number>
+);
